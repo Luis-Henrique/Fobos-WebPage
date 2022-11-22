@@ -1,0 +1,22 @@
+@model Fobos.Models.Post
+
+@{
+    ViewData["Title"] = "{Model.Titulo}";
+}
+
+    <section class="post-header">
+        <div class="header-content post-container">
+            <a href="~/Home/Index" class="back-home">Voltar ao início</a>
+            <h1 class="header-title">@Model.Titulo</h1>
+            <img src="~/@Model.Linkimagem" alt="" class="header-img">
+        </div>
+    </section>
+
+    <section class="post-content post-container">
+       <h2 class="sub-heading">@Model.Subtitulo1</h2>
+       <p class="post-text">@Model.Conteudo1</p>
+       <h2 class="sub-heading">@Model.Subtitulo2</h2> 
+       <p class="post-text">@Model.Conteudo2</p>
+       <h1 class="sub-heading">Materiais de apoio</h1>
+       <p class="post-text">@Model.Apoio</p>
+    </section>

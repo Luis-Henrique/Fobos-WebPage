@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fobos</title>
+    <link rel="icon" type="image/x-icon" href="~/img/fobos.jpg">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <a class="logo"><img src="~/img/logo.png" class="logo-img"></a>
+            <div class="menu">
+                <a class="menu" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <a class="menu" asp-area="" asp-controller="Home" asp-action="Contato">Contato</a>
+                <a class="menu" asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+            </div>
+            <a class="login" asp-area="" asp-controller="Home" asp-action="Cadastro">Cadastro</a>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text container">
+            <h2 class="home-title">Colonização de Marte</h2>
+            <span class="home-subtitle">Explore as possibilidades do planeta vermelho</span>
+        </div>
+    </section>
+
+    <div class="page">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="footer container">
+        <p>&#169; FOBOS Todos os Direitos Reservados</p>
+        <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=100087609806321"><i class='bx bxl-facebook'></i></a>
+            <a href="twitter.com"><i class='bx bxl-twitter'></i></a>
+            <a href="https://instagram.com/_empresafobos?igshid=YmMyMTA2M2Y="><i class='bx bxl-instagram'></i></a>
+            <a href="linkedin.com/feed/"><i class='bx bxl-linkedin'></i></a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

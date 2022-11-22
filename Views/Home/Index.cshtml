@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Fobos.Models.Post>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="post-filter container">
+        <span class="filter-item active-filter" data-filter='tudo'>Tudo</span>
+        <span class="filter-item" data-filter='planeta'>Planeta</span>
+        <span class="filter-item" data-filter='colonizacao'>Colonização</span>
+        <span class="filter-item" data-filter='transporte'>Transporte</span>
+    </div>
+
+    <section class="post container">
+        @foreach(var post in Model)
+        {
+        <div class="post-box @post.Categoria">
+            <img src="~/@post.Linkimagem" alt="" class="post-img">
+            <h2 class="category">@post.Categoria</h2>
+            <a href="/Home/PostPage/@post.Id" class="post-title">
+                @post.Titulo
+            </a>
+            <span class="post-date">@post.Data</span>
+            <p class="post-description">@post.Descricao</p>
+            <div class="profile">
+                <img src="~/@post.Autorimg" alt="" class="profile-img">
+                <span class="profile-name">@post.Autor</span>
+            </div>
+        </div>
+        }
+    </section>

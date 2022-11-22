@@ -1,0 +1,30 @@
+@model Fobos.Models.User
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<section class="contato container">
+    <h1>Cadastro</h1>
+    <p>Cadastre-se na nossa NewsLetter</p>
+        <form class="form" asp-controller="Home" asp-action="Cadastro" method="POST">
+        <input type="text" name="nome" class="question" id="nome" required autocomplete="off" asp-for="@Model.Nome"/>
+        <label for="nome"><span>Qual o seu nome?</span></label>
+        <span asp-validation-for="@Model.Nome" class="text-danger"></span>
+
+        <input type="text" name="email" class="question" id="email" required autocomplete="off" asp-for="@Model.Email"/>
+        <label for="email"><span>Qual o seu melhor e-mail?</span></label>
+        <span asp-validation-for="@Model.Email" class="text-danger"></span>
+
+        <input type="text" name="telefone" class="question" id="telefone" required autocomplete="off" asp-for="@Model.Telefone"/>
+        <label for="telefone"><span>Qual seu número?</span></label>
+        <span asp-validation-for="@Model.Telefone" class="text-danger"></span>
+
+        <br>
+        <p class="msgalert">Ao clicar no botão você aceita recebecer e-mails de marketing da fobos</p>
+        <br>
+        
+        <input class="login" type="submit" value="Cadastrar">
+        </form>
+</section>
+
